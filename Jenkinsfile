@@ -156,25 +156,25 @@ pipeline {
                     
                       kubectl get nodes --kubeconfig=/root/.kube/config
 
-                      sed -i 's/IMAGE_PULL_SECRET/${IMAGE_PULL_SECRET}/g' deploy.yaml
+                      sed -i 's/IMAGE_PULL_SECRET/${IMAGE_PULL_SECRET}/g' k8deploy.yaml
 
-                      sed -i 's/NAMESPACE/${NAMESPACE}/g' deploy.yaml
+                      sed -i 's/NAMESPACE/${NAMESPACE}/g' k8deploy.yaml
 
-                      sed -i 's/REPLICASET/${REPLICASET}/g' deploy.yaml
+                      sed -i 's/REPLICASET/${REPLICASET}/g' k8deploy.yaml
 
-                      sed -i 's/PROJECT_NAME/${PROJECT_NAME}/g' deploy.yaml
+                      sed -i 's/PROJECT_NAME/${PROJECT_NAME}/g' k8deploy.yaml
 
-                      sed -i 's/REPOSITORY_URL/${REPOSITORY_URL}/g' deploy.yaml
+                      sed -i 's/REPOSITORY_URL/${REPOSITORY_URL}/g' k8deploy.yaml
 
-                      sed -i 's/BRANCH/${BRANCH}/g' deploy.yaml
+                      sed -i 's/BRANCH/${BRANCH}/g' k8deploy.yaml
 
-                      sed -i 's/CONTAINERPORT/${CONTAINERPORT}/g' deploy.yaml
+                      sed -i 's/CONTAINERPORT/${CONTAINERPORT}/g' k8deploy.yaml
 
-                      sed -i 's/PORT/${PORT}/g' deploy.yaml
+                      sed -i 's/PORT/${PORT}/g' k8deploy.yaml
 
-                      cat deploy.yaml
+                      cat k8deploy.yaml
 
-                      kubectl apply -f deploy.yaml --namespace=${NAMESPACE} --kubeconfig=/root/.kube/config
+                      kubectl apply -f k8deploy.yaml --namespace=${NAMESPACE} --kubeconfig=/root/.kube/config
 
                       """   
                 }
